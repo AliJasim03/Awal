@@ -1,3 +1,4 @@
+import 'package:awal/products_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -10,7 +11,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
   final List<Widget> _tabs = [
-    Placeholder(),
+    ProductsPage(),
 
     Placeholder(),
 
@@ -42,7 +43,7 @@ class _HomePageState extends State<HomePage> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
+            icon: Icon(Icons.phone),
             label: 'Favorites',
           ),
           BottomNavigationBarItem(
