@@ -28,6 +28,8 @@ class _HomePageState extends State<HomePage> {
       ),
       body: _tabs[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        showSelectedLabels: true,
+        showUnselectedLabels: false,
         currentIndex: _currentIndex,
         onTap: (int index) {
           setState(() {
