@@ -2,9 +2,9 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 
-class Producds {
+class Product {
   Image image;
   String title;
   String descreptoin;
-  Producds(this.image, this.title, this.descreptoin);
+  Product(this.image, this.title, this.descreptoin);
 }
