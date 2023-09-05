@@ -1,3 +1,4 @@
+import 'package:awal/models/constants.dart';
 import 'package:flutter/material.dart';
 import 'home_page.dart';
 
@@ -10,7 +11,11 @@ class Awal extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Awal',
-      theme: ThemeData(),
+      theme: ThemeData(
+        primaryColor: kPrimaryColor,
+        secondaryHeaderColor: kSecondryColor,
+        fontFamily: 'Futura',
+      ),
       home: const HomePage(),
       debugShowCheckedModeBanner: false,
     );

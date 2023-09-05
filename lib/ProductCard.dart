@@ -1,3 +1,4 @@
+import 'package:awal/models/constants.dart';
 import 'package:awal/models/productGategory.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -28,19 +29,27 @@ class ProductCard extends StatelessWidget {
                 child: product.image,
               ),
             ),
-            SizedBox(
-              width: 40,
-              height: double.infinity,
-            ),
+            // SizedBox(
+            // width: 40,
+            //   height: double.infinity,
+            // ),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
                     product.title,
-                    style: TextStyle(fontSize: 20),
+                    style: kTitleTextStyle,
+                    textAlign: TextAlign.center,
                   ),
-                  Text(product.descreptoin)
+                  SizedBox(
+                    width: double.maxFinite,
+                    height: 5,
+                  ),
+                  Text(
+                    product.descreptoin,
+                    style: kBodyTextStyle,
+                  )
                 ],
               ),
             )

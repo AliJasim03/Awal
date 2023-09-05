@@ -1,3 +1,4 @@
+import 'package:awal/models/constants.dart';
 import 'package:awal/products_page.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +26,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bottom Navigation Demo'),
+        title: Text(
+          'Home Page',
+          style: kAppBarTextStyle,
+        ),
+        backgroundColor: kPrimaryColor,
       ),
       body: _tabs[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(

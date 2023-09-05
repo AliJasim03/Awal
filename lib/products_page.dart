@@ -9,10 +9,20 @@ class ProductsPage extends StatefulWidget {
   State<ProductsPage> createState() => _ProductsPageState();
 }
 
-var product = Product(
-    Image.asset('images/AGM/residential_system/Inverter_Cassette.jpg'),
-    'Residential System',
-    'Providing sustainable cooling to millions of people at home');
+List<Product> products = [
+  Product(Image.asset('images/residential-1.png'), 'Residential System',
+      'Providing sustainable cooling to millions of people at home'),
+  Product(Image.asset('images/commercial.png'), 'Commercial System',
+      'Integrated solutions for every business environment'),
+  Product(Image.asset('images/vsi-1.png'), 'VRS System',
+      'High efficiency unit with wide capacity and operation range'),
+  Product(Image.asset('images/applied-system.png'), 'Applied System',
+      'Designed to help lower environmental impact with next-generation refrigerants'),
+  Product(Image.asset('images/air.png'), 'Special Product',
+      'Product innovation to enhance indoor air quality'),
+  Product(Image.asset('images/refrigeration.png'), 'Refrigeration Product',
+      'We keep your food and other perishable fresh'),
+];
 
 class _ProductsPageState extends State<ProductsPage> {
   @override
@@ -21,12 +31,8 @@ class _ProductsPageState extends State<ProductsPage> {
       children: [
         Column(
           children: [
-            ProductCard(product: product),
-            ProductCard(product: product),
-            ProductCard(product: product),
-            ProductCard(product: product),
-            ProductCard(product: product),
-            ProductCard(product: product),
+            for (var product in products)
+              ProductCard(product: product) //the i for loop didnt work
           ],
         )
       ],
