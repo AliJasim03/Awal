@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class Product {
+class Category {
   Image image;
   String title;
   String descreptoin;
-  Product(this.image, this.title, this.descreptoin);
+  Category(this.image, this.title, this.descreptoin);
 }

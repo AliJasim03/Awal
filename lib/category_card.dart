@@ -1,13 +1,12 @@
+import 'package:awal/models/Category.dart';
 import 'package:awal/models/constants.dart';
-import 'package:awal/models/Catergory.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class ProductCard extends StatelessWidget {
-  final Product product;
+class CategoryCard extends StatelessWidget {
+  final Category category;
 
-  const ProductCard({super.key, required this.product});
+  const CategoryCard({super.key, required this.category});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +25,7 @@ class ProductCard extends StatelessWidget {
               height: double.infinity,
               child: FittedBox(
                 fit: BoxFit.fill,
-                child: product.image,
+                child: category.image,
               ),
             ),
             // SizedBox(
@@ -38,7 +37,7 @@ class ProductCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    product.title,
+                    category.title,
                     style: kTitleTextStyle,
                     textAlign: TextAlign.center,
                   ),
@@ -47,7 +46,7 @@ class ProductCard extends StatelessWidget {
                     height: 5,
                   ),
                   Text(
-                    product.descreptoin,
+                    category.descreptoin,
                     style: kBodyTextStyle,
                   )
                 ],

@@ -1,5 +1,5 @@
 import 'package:awal/models/constants.dart';
-import 'package:awal/products_page.dart';
+import 'package:awal/category_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
   final List<Widget> _tabs = [
-    ProductsPage(),
+    CategoryPage(),
 
     Placeholder(),
 
