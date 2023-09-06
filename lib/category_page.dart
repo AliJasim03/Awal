@@ -1,5 +1,5 @@
-import 'package:awal/ProductCard.dart';
-import 'package:awal/models/productGategory.dart';
+import 'package:awal/CategoryCard.dart';
+import 'package:awal/models/Catergory.dart';
 import 'package:flutter/material.dart';
 
 class ProductsPage extends StatefulWidget {

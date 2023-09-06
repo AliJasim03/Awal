@@ -1,5 +1,5 @@
 import 'package:awal/models/constants.dart';
-import 'package:awal/models/productGategory.dart';
+import 'package:awal/models/Catergory.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -13,8 +13,8 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushReplacement(
-            context, CupertinoPageRoute(builder: (context) => Container()));
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Container()));
       },
       child: Card(
         child: SizedBox(
