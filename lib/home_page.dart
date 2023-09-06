@@ -1,5 +1,6 @@
 import 'package:awal/models/constants.dart';
 import 'package:awal/category_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -24,24 +25,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Home Page',
-          style: kAppBarTextStyle,
-        ),
-        backgroundColor: kPrimaryColor,
-      ),
-      body: _tabs[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        showSelectedLabels: true,
-        showUnselectedLabels: false,
-        currentIndex: _currentIndex,
-        onTap: (int index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
+    return CupertinoTabScaffold(
+      tabBar: CupertinoTabBar(
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -57,6 +42,46 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
+      tabBuilder: (context, index) {
+        return CupertinoTabView(builder: (context) => _tabs[index]);
+      },
     );
   }
 }
+
+
+// Scaffold(
+//       appBar: AppBar(
+//         title: Text(
+//           'Home Page',
+//           style: kAppBarTextStyle,
+//         ),
+//         backgroundColor: kPrimaryColor,
+//       ),
+//       body: _tabs.elementAt(_currentIndex),
+//       bottomNavigationBar: BottomNavigationBar(
+//         type: BottomNavigationBarType.fixed,
+//         showSelectedLabels: true,
+//         showUnselectedLabels: false,
+//         currentIndex: _currentIndex,
+//         onTap: (int index) {
+//           setState(() {
+//             _currentIndex = index;
+//           });
+//         },
+//         items: [
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.home),
+//             label: 'Home',
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.phone),
+//             label: 'Favorites',
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.person),
+//             label: 'Profile',
+//           ),
+//         ],
+//       ),
+//     );

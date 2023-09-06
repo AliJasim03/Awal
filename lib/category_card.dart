@@ -1,5 +1,8 @@
+import 'package:awal/category_page.dart';
 import 'package:awal/models/Category.dart';
 import 'package:awal/models/constants.dart';
+import 'package:awal/product_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -12,8 +15,16 @@ class CategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Container()));
+        Navigator.of(context).push(
+          CupertinoPageRoute<void>(
+            builder: (BuildContext context) {
+              return CupertinoPageScaffold(
+                navigationBar: CupertinoNavigationBar(),
+                child: Container(),
+              );
+            },
+          ),
+        );
       },
       child: Card(
         child: SizedBox(
@@ -41,7 +52,7 @@ class CategoryCard extends StatelessWidget {
                     style: kTitleTextStyle,
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: double.maxFinite,
                     height: 5,
                   ),

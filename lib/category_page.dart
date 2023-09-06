@@ -1,5 +1,6 @@
 import 'package:awal/category_card.dart';
 import 'package:awal/models/Category.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CategoryPage extends StatefulWidget {
@@ -27,15 +28,20 @@ List<Category> categorys = [
 class _CategoryPageState extends State<CategoryPage> {
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        Column(
-          children: [
-            for (var category in categorys)
-              CategoryCard(category: category) //the i for loop didnt work
-          ],
-        )
-      ],
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text('Home Page'),
+      ),
+      child: ListView(
+        children: [
+          Column(
+            children: [
+              for (var category in categorys)
+                CategoryCard(category: category) //the i for loop didnt work
+            ],
+          )
+        ],
+      ),
     );
   }
 }

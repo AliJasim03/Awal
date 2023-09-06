@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class MyWidget extends StatefulWidget {
-  const MyWidget({super.key});
+class ProductPage extends StatefulWidget {
+  const ProductPage({super.key});
 
   @override
-  State<MyWidget> createState() => _MyWidgetState();
+  State<ProductPage> createState() => _ProductPageState();
 }
 
-class _MyWidgetState extends State<MyWidget> {
+class _ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return ListView(children: []);
   }
 }

@@ -62,9 +62,9 @@ flutter:
     - images/AGM/agm_logo/
     - images/AGM/applied_system/
     - images/AGM/commercial_system/
-    - images/AGM/refrigeration_Category/
+    - images/AGM/refrigeration_product/
     - images/AGM/residential_system/
-    - images/AGM/special_Category/
+    - images/AGM/special_product/
     - images/AGM/vrs_system/
 
   # An image asset can refer to one or more resolution-specific "variants", see
