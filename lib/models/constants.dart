@@ -23,5 +23,5 @@ const kTitleTextStyle = TextStyle(
 const kBodyTextStyle = TextStyle(
   color: kSecondryColor,
   fontFamily: 'Futura',
-  fontSize: 16,
+  fontSize: 14,
 );
