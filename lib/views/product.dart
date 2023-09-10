@@ -1,4 +1,5 @@
 import 'package:awal/components/product_card.dart';
+import 'package:awal/models/product.dart';
 import 'package:flutter/cupertino.dart';
 
 class ProductPage extends StatefulWidget {
@@ -29,9 +30,8 @@ class _ProductPageState extends State<ProductPage> {
               crossAxisCount: 1, // Number of columns
               childAspectRatio: 1.3,
             ),
-            children: const [
-              ProductCard(),
-              ProductCard(),
+            children: [
+              for (var product in refrigeration_product) ProductCard(product: product),
             ],
           ),
         ),
