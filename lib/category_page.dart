@@ -1,5 +1,5 @@
 import 'package:awal/category_card.dart';
-import 'package:awal/models/Category.dart';
+import 'package:awal/models/category.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

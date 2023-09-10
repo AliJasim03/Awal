@@ -1,5 +1,5 @@
 import 'package:awal/category_page.dart';
-import 'package:awal/models/Category.dart';
+import 'package:awal/models/category.dart';
 import 'package:awal/models/constants.dart';
 import 'package:awal/product_page.dart';
 import 'package:flutter/cupertino.dart';
