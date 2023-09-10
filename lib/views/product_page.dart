@@ -15,26 +15,25 @@ class _ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
     String title = widget.title;
+
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         middle: Text(title),
       ),
       child: SafeArea(
-        child: Expanded(
-          child: Padding(
-            padding: EdgeInsets.all(10),
-            child: GridView(
-              physics: NeverScrollableScrollPhysics(), // Disable scrolling
-              shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 1, // Number of columns
-                childAspectRatio: 1.3,
-              ),
-              children: [
-                productCard(),
-                productCard(),
-              ],
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: GridView(
+            physics: const NeverScrollableScrollPhysics(), // Disable scrolling
+            shrinkWrap: true,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 1, // Number of columns
+              childAspectRatio: 1.3,
             ),
+            children: const [
+              ProductCard(),
+              ProductCard(),
+            ],
           ),
         ),
       ),
@@ -42,8 +41,8 @@ class _ProductPageState extends State<ProductPage> {
   }
 }
 
-class productCard extends StatelessWidget {
-  const productCard({
+class ProductCard extends StatelessWidget {
+  const ProductCard({
     Key? key,
   }) : super(key: key);
 
@@ -55,7 +54,7 @@ class productCard extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(
+              image: const AssetImage(
                 'images/AGM/refrigeration_product/VISI Coolers.jpg',
               ),
               fit: BoxFit.cover,
@@ -65,7 +64,7 @@ class productCard extends StatelessWidget {
               ),
             ),
           ),
-          child: Row(
+          child: const Row(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
