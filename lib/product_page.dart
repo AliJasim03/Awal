@@ -1,4 +1,5 @@
 import 'package:awal/models/constants.dart';
+import 'package:awal/test.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -48,42 +49,45 @@ class productCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              'images/AGM/refrigeration_product/VISI Coolers.jpg',
-            ),
-            fit: BoxFit.cover,
-            colorFilter: ColorFilter.mode(
-              Colors.black.withOpacity(0.5),
-              BlendMode.dstATop,
-            ),
-          ),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              flex: 2,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    'VISI Coolers',
-                    style: kTitleTextStyle,
-                  ),
-                  Text(
-                    '\u2022 100% environment friendly\nEnvironmentally friendly\nCFC free refrigerant\n0 to 10°C adjustable thermostat\nPre-painted interior with single vertical light\nAdjustable shelves\nPVC coated wire shelves\nAvailable in 60 Hz and 50 Hz',
-                    style: kBodyTextStyle,
-                  ),
-                  // Add additional widgets below if needed
-                ],
+    return GestureDetector(
+      onTap: () => showActionSheet(context),
+      child: Card(
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                'images/AGM/refrigeration_product/VISI Coolers.jpg',
+              ),
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                Colors.black.withOpacity(0.5),
+                BlendMode.dstATop,
               ),
             ),
-          ],
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                flex: 2,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'VISI Coolers',
+                      style: kTitleTextStyle,
+                    ),
+                    Text(
+                      '\u2022 100% environment friendly\nEnvironmentally friendly\nCFC free refrigerant\n0 to 10°C adjustable thermostat\nPre-painted interior with single vertical light\nAdjustable shelves\nPVC coated wire shelves\nAvailable in 60 Hz and 50 Hz',
+                      style: kBodyTextStyle,
+                    ),
+                    // Add additional widgets below if needed
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
