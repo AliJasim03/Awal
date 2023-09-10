@@ -23,8 +23,8 @@ To run this app locally or on a physical device, follow these steps:
 
 2. **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/awal-gulf-hvacr-app.git
-   cd awal-gulf-hvacr-app
+   git clone https://github.com/AliJasim03/Awal
+   cd Awal
    ```
 
 3. **Install Dependencies:**
