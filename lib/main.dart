@@ -1,8 +1,8 @@
-import 'package:awal/category_page.dart';
+import 'package:awal/views/category_page.dart';
 import 'package:awal/models/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'home_page.dart';
+import 'views/home_page.dart';
 
 void main() => runApp(
       const CupertinoApp(

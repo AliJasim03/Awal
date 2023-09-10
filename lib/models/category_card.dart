@@ -1,7 +1,7 @@
-import 'package:awal/category_page.dart';
+import 'package:awal/views/category_page.dart';
 import 'package:awal/models/category.dart';
 import 'package:awal/models/constants.dart';
-import 'package:awal/product_page.dart';
+import 'package:awal/views/product_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
