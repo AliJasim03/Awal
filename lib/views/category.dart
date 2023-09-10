@@ -1,7 +1,6 @@
 import 'package:awal/models/category_card.dart';
 import 'package:awal/models/category.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class CategoryPage extends StatefulWidget {
   const CategoryPage({super.key});
@@ -29,7 +28,7 @@ class _CategoryPageState extends State<CategoryPage> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
+      navigationBar: const CupertinoNavigationBar(
         middle: Text('Home Page'),
       ),
       child: ListView(

@@ -1,5 +1,4 @@
-import 'package:awal/models/constants.dart';
-import 'package:awal/views/category_page.dart';
+import 'package:awal/views/category.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,13 +10,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _currentIndex = 0;
+  final int _currentIndex = 0;
+
   final List<Widget> _tabs = [
-    CategoryPage(),
+    const CategoryPage(),
 
-    Placeholder(),
+    const Placeholder(),
 
-    Placeholder(),
+    const Placeholder(),
     // HomeScreen(),
     // FavoritesScreen(),
     // ProfileScreen(),
@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',

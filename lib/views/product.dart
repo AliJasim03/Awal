@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 class ProductPage extends StatefulWidget {
   const ProductPage({super.key, required this.title});
+
   final String title;
 
   @override
