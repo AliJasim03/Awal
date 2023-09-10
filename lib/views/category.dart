@@ -1,4 +1,4 @@
-import 'package:awal/models/category_card.dart';
+import 'package:awal/components/category_card.dart';
 import 'package:awal/models/category.dart';
 import 'package:flutter/cupertino.dart';
 
