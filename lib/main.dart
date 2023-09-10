@@ -4,7 +4,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'home_page.dart';
 
-void main() => runApp(CupertinoApp(home: const Awal()));
+void main() => runApp(
+      const CupertinoApp(
+        home: Awal(),
+      ),
+    );
 
 final List<Widget> _tabs = [
   CategoryPage(),
