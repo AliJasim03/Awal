@@ -1,3 +1,4 @@
+import 'package:awal/constants.dart';
 import 'package:awal/models/cart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -45,12 +46,13 @@ class _CartCardState extends State<CartCard> {
                   // Get the ImageData object at the current index
                   return Card(
                     child: ListTile(
-                      leading: cart.getPorductList()[
-                          index], // Display the image on the left side of the ListTile
+                      leading: cart.productsCart[index]
+                          .image, // Display the image on the left side of the ListTile
                       title: Text(
-                          'Hi'), // Display the name as the title of the ListTile
-                      subtitle: Text(
-                          'hello'), // Display the description as the subtitle of the ListTile
+                        cart.productsCart[index].title,
+                        style: kTitleTextStyle,
+                      ), // Display the name as the title of the ListTile
+                      // Display the description as the subtitle of the ListTile
                     ),
                   );
                 }));
