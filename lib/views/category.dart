@@ -1,6 +1,5 @@
 import 'package:awal/components/category_card.dart';
 import 'package:awal/models/category.dart';
-import 'package:awal/models/product.dart';
 import 'package:flutter/cupertino.dart';
 
 class CategoryPage extends StatefulWidget {
@@ -9,45 +8,6 @@ class CategoryPage extends StatefulWidget {
   @override
   State<CategoryPage> createState() => _CategoryPageState();
 }
-
-List<Category> categorys = [
-  Category(
-    Image.asset('images/residential-1.png'),
-    'Residential System',
-    'Providing sustainable cooling to millions of people at home',
-    specialProduct,
-  ),
-  Category(
-    Image.asset('images/commercial.png'),
-    'Commercial System',
-    'Integrated solutions for every business environment',
-    specialProduct,
-  ),
-  Category(
-    Image.asset('images/vsi-1.png'),
-    'VRS System',
-    'High efficiency unit with wide capacity and operation range',
-    specialProduct,
-  ),
-  Category(
-    Image.asset('images/applied-system.png'),
-    'Applied System',
-    'Designed to help lower environmental impact with next-generation refrigerants',
-    specialProduct,
-  ),
-  Category(
-    Image.asset('images/air.png'),
-    'Special Category',
-    'Category innovation to enhance indoor air quality',
-    specialProduct,
-  ),
-  Category(
-    Image.asset('images/refrigeration.png'),
-    'Refrigeration Category',
-    'We keep your food and other perishable fresh',
-    refrigerationProduct,
-  ),
-];
 
 class _CategoryPageState extends State<CategoryPage> {
   @override
@@ -60,7 +20,7 @@ class _CategoryPageState extends State<CategoryPage> {
         children: [
           Column(
             children: [
-              for (var category in categorys)
+              for (var category in categories)
                 CategoryCard(category: category) //the i for loop didnt work
             ],
           )

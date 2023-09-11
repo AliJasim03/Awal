@@ -126,3 +126,74 @@ Energy Efficient
 ''',
   ),
 ];
+
+List<Product> appliedProduct = [
+  Product(
+    image: Image.asset('images/AGM/applied_system/Air Handling Unit.jpg'),
+    title: 'Air Handling Unit',
+    description: '''
+\u2022 The 4AH series Air Handling units are based on Awal’s AHU series. This feature of this series Flexible-Modular type construction with 15 basic sizes covering a wide range of airflow from 1,400m3/hr ~ 61,200m3/hr
+\u2022 The combination of width and height dimensions within the basic sizes offers flexibility in sizing the unit to fit into various on-site space requirements
+\u2022 Fan and Motor assembly is mounted on a common base with suitable vibration isolators to ensure that they are isolated from the main case structure
+\u2022 The AHU are offered with double skin panels with 25mm/45mm thickness, fabricated from heavy gauge galvanized steel sheet dully finished with powder coat.
+\u2022 Units are manufactured at an ISO 9001 certified facility center ensuring quality standards for the components used in construction of the units
+\u2022 The outer panels are powder-coated and inner panels are mist coasted with paint having Salt spray test in accordance with ASTM B117 standards.
+\u2022 The blue skin pre-coated outer panels can be provided as an optional feature and it is known for its aesthetics.
+\u2022 All components are standard and interchangeable. The access panels are provided with easily removable fasteners to facilitate easy maintenance.
+''',
+  ),
+  Product(
+    image: Image.asset('images/AGM/applied_system/Compact Air Handling Unit.jpg'),
+    title: 'Compact Air Handling Unit',
+    description: '''
+\u2022 Weather resistant steel cabinet qualified for1000 Hours of Salt Spray test
+\u2022 Double skin Panels 25 MM Thickness
+\u2022 AHRI certified Cooling Coil
+\u2022 AMCA Certified Fans
+''',
+  ),
+  Product(
+    image: Image.asset('images/AGM/applied_system/Air Cooled Chiller.jpg'),
+    title: 'Air Cooled Chiller',
+    description: '''
+\u2022 Corrosion free profile construction
+\u2022 Modular design gives greater flexibility
+\u2022 Easily accessible system components
+\u2022 Multiple compressor design, gives control over different load conditions
+\u2022 Units are fitted with scroll compressor with anti-vibration mounts
+\u2022 Refrigeration circuit complete with TEX valve, replaceable drier, sight glass etc.
+\u2022 Compressor and fan motor provide with overload relays for protection
+\u2022 Cool only model is standard option
+\u2022 HP/LP switches provided as protection for the system
+''',
+  ),
+  Product(
+    image: Image.asset('images/AGM/applied_system/Chilled Water FCU Decorative.jpg'),
+    title: 'Chilled Water FCU Decorative',
+    description: '''
+\u2022 Manufactured from high grade engineering plastic and corrosion residential sheet metal
+\u2022 Insulated to reduce condensation and noise levels
+\u2022 High efficiency long life, high power factor, capacitor driven motor
+\u2022 Easy and flexible electrical wiring connection
+\u2022 Units are constructed of high quality plastic material with ribs to support the load
+\u2022 Units are provided with standard high efficiency filters (washable type)
+\u2022 Blowers are statically and dynamically balanced to minimize vibration and reduce noise levels
+''',
+  ),
+  Product(
+    image: Image.asset('images/AGM/applied_system/Chilled Water FCU Ducted.jpg'),
+    title: 'Chilled Water FCU Ducted',
+    description: '''
+\u2022 Galvanized steel casing
+\u2022 Junction box with terminal strip
+\u2022 Efficient heat exchangers made of copper and enhanced aluminum fins
+\u2022 Fan assembly
+\u2022 Auto air vent
+\u2022 Permanent split capacitor motor
+\u2022 UL recognized and CSA approved motors
+\u2022 AHRI 410 certified coils
+\u2022 Manufactured by state-of-the-art technology equipment
+\u2022 Washable panel filter
+''',
+  ),
+];
