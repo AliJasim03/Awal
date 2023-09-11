@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 class Category {
   Image image;
   String title;
-  String descreptoin;
+  String description;
 
   List<Product> productList;
 
-  Category(this.image, this.title, this.descreptoin, this.productList);
+  Category(this.image, this.title, this.description, this.productList);
 }
 
 List<Category> categories = [

@@ -4,14 +4,38 @@ import 'package:awal/views/product.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
 class CategoryCard extends StatelessWidget {
-  final Category category;
-
   const CategoryCard({super.key, required this.category});
+
+  final Category category;
 
   @override
   Widget build(BuildContext context) {
+    var categoryImage = category.image;
+
+    var categoryInfo = Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const Spacer(flex: 2),
+          Expanded(
+            flex: 2,
+            child: Text(category.title, style: kTitleTextStyle, textAlign: TextAlign.center),
+          ),
+          Expanded(
+            flex: 5,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 0.0,
+                horizontal: 20.0,
+              ),
+              child: Text(category.description, style: kBodyTextStyle, textAlign: TextAlign.center),
+            ),
+          ),
+        ],
+      ),
+    );
+
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(
@@ -30,38 +54,8 @@ class CategoryCard extends StatelessWidget {
           width: double.infinity,
           height: 200,
           child: Row(children: [
-            SizedBox(
-              width: 220,
-              height: double.infinity,
-              child: FittedBox(
-                fit: BoxFit.fill,
-                child: category.image,
-              ),
-            ),
-            // SizedBox(
-            // width: 40,
-            //   height: double.infinity,
-            // ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    category.title,
-                    style: kTitleTextStyle,
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(
-                    width: double.maxFinite,
-                    height: 5,
-                  ),
-                  Text(
-                    category.descreptoin,
-                    style: kBodyTextStyle,
-                  )
-                ],
-              ),
-            )
+            categoryImage,
+            categoryInfo,
           ]),
         ),
       ),
