@@ -17,7 +17,10 @@ class CategoryCard extends StatelessWidget {
         Navigator.of(context).push(
           CupertinoPageRoute<void>(
             builder: (BuildContext context) {
-              return ProductPage(title: category.title);
+              return ProductPage(
+                title: category.title,
+                productList: category.productList,
+              );
             },
           ),
         );

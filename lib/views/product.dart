@@ -3,9 +3,10 @@ import 'package:awal/models/product.dart';
 import 'package:flutter/cupertino.dart';
 
 class ProductPage extends StatefulWidget {
-  const ProductPage({super.key, required this.title});
+  const ProductPage({super.key, required this.title, required this.productList});
 
   final String title;
+  final List<Product> productList;
 
   @override
   State<ProductPage> createState() => _ProductPageState();
@@ -31,7 +32,7 @@ class _ProductPageState extends State<ProductPage> {
               childAspectRatio: 1.3,
             ),
             children: [
-              for (var product in refrigerationProduct) ProductCard(product: product),
+              for (var product in widget.productList) ProductCard(product: product),
             ],
           ),
         ),
