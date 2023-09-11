@@ -1,6 +1,9 @@
+import 'package:awal/models/cart.dart';
+import 'package:awal/views/cart_page.dart';
 import 'package:awal/views/category.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _tabs = [
     const CategoryPage(),
 
-    const Placeholder(),
+    const CartPage(),
 
     const Placeholder(),
     // HomeScreen(),
@@ -25,7 +28,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoTabScaffold(
+    var cupertinoTabScaffold = CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
         items: const [
           BottomNavigationBarItem(
@@ -45,6 +48,10 @@ class _HomePageState extends State<HomePage> {
       tabBuilder: (context, index) {
         return CupertinoTabView(builder: (context) => _tabs[index]);
       },
+    );
+    return ChangeNotifierProvider(
+      create: (context) => Cart(),
+      child: cupertinoTabScaffold,
     );
   }
 }
