@@ -21,22 +21,16 @@ class ProductCard extends StatelessWidget {
               colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.dstATop),
             ),
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Spacer(
-                flex: 1,
-              ),
-              Expanded(
-                flex: 2,
-                child: Text(product.title, style: kTitleTextStyle),
-              ),
-              Expanded(
-                flex: 4,
-                child: Text(product.description, style: kBodyTextStyle),
-              ),
-              // Add additional widgets below if needed
-            ],
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(product.title, style: kTitleTextStyle),
+                Expanded(child: Center(child: Text(product.description, style: kBodyTextStyle))),
+                // Add additional widgets below if needed
+              ],
+            ),
           ),
         ),
       ),
