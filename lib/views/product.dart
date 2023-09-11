@@ -31,7 +31,7 @@ class _ProductPageState extends State<ProductPage> {
               childAspectRatio: 1.3,
             ),
             children: [
-              for (var product in refrigeration_product) ProductCard(product: product),
+              for (var product in refrigerationProduct) ProductCard(product: product),
             ],
           ),
         ),
