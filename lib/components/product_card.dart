@@ -11,14 +11,15 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => showActionSheet(context),
+      onTap: () => showActionSheet(context, product),
       child: Card(
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
               image: product.image.image, // this is dumb
               fit: BoxFit.cover,
-              colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.dstATop),
+              colorFilter: ColorFilter.mode(
+                  Colors.black.withOpacity(0.5), BlendMode.dstATop),
             ),
           ),
           child: Padding(
@@ -27,7 +28,10 @@ class ProductCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(product.title, style: kTitleTextStyle),
-                Expanded(child: Center(child: Text(product.description, style: kBodyTextStyle))),
+                Expanded(
+                    child: Center(
+                        child:
+                            Text(product.description, style: kBodyTextStyle))),
                 // Add additional widgets below if needed
               ],
             ),

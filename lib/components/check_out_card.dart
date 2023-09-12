@@ -1,8 +1,11 @@
 import 'package:awal/components/default_button.dart';
 import 'package:awal/components/size_config.dart';
 import 'package:awal/constants.dart';
+import 'package:awal/models/cart.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 class CheckoutCard extends StatelessWidget {
   const CheckoutCard({
@@ -11,6 +14,12 @@ class CheckoutCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var appState = context.watch<Cart>();
+    const trashIcon = IconData(
+      0xf4c4,
+      fontFamily: CupertinoIcons.iconFont,
+      fontPackage: CupertinoIcons.iconFontPackage,
+    );
     return Container(
       padding: EdgeInsets.symmetric(
         vertical: getProportionateScreenWidth(15),
@@ -37,49 +46,22 @@ class CheckoutCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(10),
-                  height: getProportionateScreenWidth(40),
-                  width: getProportionateScreenWidth(40),
-                  decoration: BoxDecoration(
-                    color: Color(0xFFF5F6F9),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: SvgPicture.asset(
-                    "images/icons/receipt.svg",
-                    color: kPrimaryColor,
-                  ),
-                ),
-                Spacer(),
-                Text("Add voucher code"),
-                const SizedBox(width: 10),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  size: 12,
-                  color: kSecondryColorDark,
-                )
-              ],
-            ),
-            SizedBox(height: getProportionateScreenHeight(20)),
-            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text.rich(
-                  TextSpan(
-                    text: "Total:\n",
-                    children: [
-                      TextSpan(
-                        text: "\$337.15",
-                        style: TextStyle(fontSize: 16, color: Colors.black),
-                      ),
-                    ],
+                GestureDetector(
+                  onTap: () {
+                    appState.removeALl();
+                  },
+                  child: const Icon(
+                    trashIcon,
+                    color: kSecondryColor,
+                    size: 30,
                   ),
                 ),
                 SizedBox(
-                  width: getProportionateScreenWidth(190),
+                  width: getProportionateScreenWidth(250),
                   child: DefaultButton(
-                    text: "Check Out",
+                    text: "Inquire Now",
                     press: () {},
                   ),
                 ),

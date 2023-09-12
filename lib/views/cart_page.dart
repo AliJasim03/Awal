@@ -33,23 +33,14 @@ class _CartPageState extends State<CartPage> {
             const Divider(), // Add a divider between each item in the list
         itemBuilder: (BuildContext context, int index) {
           // Get the ImageData object at the current index
+          return CartCard(product: cart.productsCart[index]);
+
           return Column(
             children: [
               for (var product in cart.getPorductList())
                 CartCard(product: product) //the i for loop didnt work
             ],
           );
-
-          // return ListView(
-          //   children: [
-          //     Column(
-          //       children: [
-          //         for (var product in cart.getPorductList())
-          //           CartCard(product: product) //the i for loop didnt work
-          //       ],
-          //     )
-          //   ],
-          // );
         },
       ),
       bottomNavigationBar: CheckoutCard(),
