@@ -1,6 +1,7 @@
 import 'package:awal/models/cart.dart';
 import 'package:awal/views/cart_page.dart';
 import 'package:awal/views/category.dart';
+import 'package:awal/views/profile/profile_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -20,7 +21,7 @@ class _HomePageState extends State<HomePage> {
 
     const CartPage(),
 
-    const Placeholder(),
+    ProfileScreen(),
     // HomeScreen(),
     // FavoritesScreen(),
     // ProfileScreen(),
