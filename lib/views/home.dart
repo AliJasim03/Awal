@@ -5,6 +5,7 @@ import 'package:awal/views/profile/profile_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:awal/components/size_config.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -29,6 +30,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     var cupertinoTabScaffold = CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
         items: const [

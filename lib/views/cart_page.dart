@@ -1,5 +1,6 @@
 import 'package:awal/components/cart_card.dart';
 import 'package:awal/components/category_card.dart';
+import 'package:awal/components/check_out_card.dart';
 import 'package:awal/constants.dart';
 import 'package:awal/models/cart.dart';
 import 'package:awal/models/product.dart';
@@ -19,11 +20,11 @@ class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
     var cart = context.watch<Cart>();
-    return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(
+    return Scaffold(
+      appBar: const CupertinoNavigationBar(
         middle: Text('Cart Page'),
       ),
-      child:
+      body:
           // Create a ListView widget with the list of ImageData objects
           ListView.separated(
         itemCount:
@@ -51,6 +52,7 @@ class _CartPageState extends State<CartPage> {
           // );
         },
       ),
+      bottomNavigationBar: CheckoutCard(),
     );
   }
 }
