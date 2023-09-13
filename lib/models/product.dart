@@ -221,3 +221,73 @@ List<Product> vrsProduct = [
 ''',
   ),
 ];
+
+List<Product> commercialProduct = [
+  Product(
+    image: Image.asset('images/AGM/commercial_system/Rooftop Package Units.jpg'),
+    title: 'Rooftop Package Units',
+    description: '''
+• Weather resistant steel cabinet qualified for1000 Hours of Salt Spray test
+• Disposable Filter
+• Double skin type Evaporator Section
+• Condenser & Evaporator Coils are with Copper Tubes and Aluminum fins.
+• IP55 Class F Blower Motor for 15 TR and Above
+• IP55 Class F Condenser Motor for 18 TR and Above
+• Power controller, Under / Over Voltage & Phase loss Protection
+• Internal Motor Protection for Indoor and Outdoor
+• Compressor Protection against High Discharge Temperature
+• Electro-Mechanical Controls
+• AHRI Certified Cooling Coil
+''',
+  ),
+  Product(
+    image: Image.asset('images/AGM/commercial_system/Central Ducted Split.jpg'),
+    title: 'Central Ducted Split',
+    description: '''
+• Hermetic Scroll compressors.
+• Condenser fans are Propeller type direct drive, draw through Vertical Discharge with fan guard mounted to the panel.
+• All units are provided with Compressor Lockout either by locking Relays or by High Pressure control trip with manual reset switch.
+• Coils are with copper tubes & aluminum fins.
+• Condenser motor is with IP55 construction and with Class F insulation.
+• Power controller, High/Low voltage, Phase loss/Reversal protection.
+• All units are designed to operate with 24V Universal Thermostat.
+• Internal motor protection for outdoor motors.
+• Compressor protection against High Discharge Temperature.
+• AHRI Certified Cooling Coil
+''',
+  ),
+  Product(
+    image: Image.asset('images/AGM/commercial_system/Condensing Unit.jpg'),
+    title: 'Condensing Unit',
+    description: '''
+• Hermetic Scroll compressors.
+• Condenser fans are Propeller type direct drive, draw through Vertical Discharge with fan guard mounted to the panel.
+• All units are provided with Compressor Lockout either by locking Relays or by High Pressure control trip with manual reset switch.
+• Coils are with copper tubes & aluminum fins.
+• Condenser motor is with IP55 construction and with Class F insulation.
+• Power controller, High/Low voltage, Phase loss/Reversal protection.
+• All units are designed to operate with 24V Universal Thermostat.
+• Internal motor protection for outdoor motors.
+• Compressor protection against High Discharge Temperature.
+''',
+  ),
+  Product(
+    image: Image.asset('images/AGM/commercial_system/Swimming Pool Chiller.jpg'),
+    title: 'Swimming Pool Chiller',
+    description: '''
+• Water Exchanger – Titanium of class Gr2 ASTM B338 with surface up to 1.4m2 pressure drop max 5kPA Water Flow from 8 to 12 m3/h
+• Water Connection 50mm x 6/4” internal thread
+• Active Defrost 4-way valve
+• Control Panel – LCD Display, AUTO mode, MicroECONOMY+ & AntiFREEZE+
+• Refilling Valve for refrigerant
+• Axial Air Fan with fan guard
+• Antivibration blocks
+• Metal galvanized cover powder coated
+• Temperature based control of heat pump operation
+• Safety systems
+• Time protection
+• Anti-freeze protection Gold fins
+• Anti-corrosive coating
+''',
+  ),
+];

@@ -22,7 +22,7 @@ List<Category> categories = [
     Image.asset('images/commercial.png'),
     'Commercial System',
     'Integrated solutions for every business environment',
-    specialProduct,
+    commercialProduct,
   ),
   Category(
     Image.asset('images/vsi-1.png'),
