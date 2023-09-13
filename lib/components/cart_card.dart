@@ -19,7 +19,7 @@ class CartCard extends StatelessWidget {
     return SmallProductCard(
       product: product,
       onPressed: () => {},
-      //style: style,
+      style: style,
     );
   }
 }

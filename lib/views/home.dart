@@ -15,7 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final int _currentIndex = 0;
+  //final int _currentIndex = 0;
 
   final List<Widget> _tabs = [
     const CategoryPage(),
