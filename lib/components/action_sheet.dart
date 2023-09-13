@@ -13,8 +13,8 @@ void showActionSheet(BuildContext context, Product product) {
   showCupertinoModalPopup<void>(
     context: context,
     builder: (BuildContext context) => CupertinoActionSheet(
-      title: const Text('Title'),
-      message: const Text('message'),
+      title: Text(product.title),
+      message: Text(product.description),
       actions: <CupertinoActionSheetAction>[
         mainAction(appState, product, context),
       ],
@@ -27,8 +27,7 @@ void showActionSheet(BuildContext context, Product product) {
   );
 }
 
-CupertinoActionSheetAction removeAction(
-    Cart appState, Product product, BuildContext context) {
+CupertinoActionSheetAction removeAction(Cart appState, Product product, BuildContext context) {
   return CupertinoActionSheetAction(
     isDestructiveAction: true,
     onPressed: () {
@@ -39,8 +38,7 @@ CupertinoActionSheetAction removeAction(
   );
 }
 
-CupertinoActionSheetAction addAction(
-    Cart appState, Product product, BuildContext context) {
+CupertinoActionSheetAction addAction(Cart appState, Product product, BuildContext context) {
   return CupertinoActionSheetAction(
     isDefaultAction: true,
     onPressed: () {
