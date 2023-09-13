@@ -12,18 +12,24 @@ class SmallProductCard extends StatelessWidget {
 
   @override
   Padding build(BuildContext context) {
+    const imageSize = 70 / 2;
+
+    var image = ClipRRect(
+      borderRadius: BorderRadius.circular(imageSize / 2), // Image border
+      child: SizedBox.fromSize(
+        size: const Size.fromRadius(imageSize), // Image radius
+        child: product.image,
+      ),
+    );
+
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
       child: TextButton(
         style: style,
         onPressed: onPressed,
         child: Row(
           children: [
-            SizedBox(
-              width: 70,
-              height: 70,
-              child: product.image,
-            ),
+            image,
             const SizedBox(width: 20),
             Expanded(
                 child: Text(
