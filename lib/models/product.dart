@@ -24,7 +24,7 @@ List<Product> refrigerationProduct = [
   ),
   Product(
     image: Image.asset('images/AGM/refrigeration_product/Chest Freazer.jpg'),
-    title: 'Chest Freazer',
+    title: 'Chest Freezer',
     description: '''
 \u2022 100% environment friendly
 \u2022 Designed to ensure perfect operation up to 43°C ambient temperature
