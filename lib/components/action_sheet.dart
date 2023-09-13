@@ -14,7 +14,10 @@ void showActionSheet(BuildContext context, Product product) {
     context: context,
     builder: (BuildContext context) => CupertinoActionSheet(
       title: Text(product.title),
-      message: Text(product.description),
+      message: Text(
+        product.description,
+        textAlign: TextAlign.start,
+      ),
       actions: <CupertinoActionSheetAction>[
         mainAction(appState, product, context),
       ],

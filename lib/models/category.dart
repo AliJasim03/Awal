@@ -28,7 +28,7 @@ List<Category> categories = [
     Image.asset('images/vsi-1.png'),
     'VRS System',
     'High efficiency unit with wide capacity and operation range',
-    specialProduct,
+    vrsProduct,
   ),
   Category(
     Image.asset('images/applied-system.png'),
