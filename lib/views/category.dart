@@ -14,7 +14,7 @@ class _CategoryPageState extends State<CategoryPage> {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: const CupertinoNavigationBar(
-        middle: Text('Home Page'),
+        middle: Text('Categories'),
       ),
       child: ListView(
         children: [

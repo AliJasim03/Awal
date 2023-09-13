@@ -17,21 +17,29 @@ class CategoryCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Spacer(flex: 1),
+          const Spacer(flex: 2),
           Expanded(
-            flex: 3,
-            child: Text(category.title,
-                style: kTitleTextStyle, textAlign: TextAlign.center),
+            flex: 6,
+            child: Text(category.title, style: kTitleTextStyle, textAlign: TextAlign.center),
           ),
           Expanded(
-            flex: 8,
+            flex: 10,
             child: Padding(
               padding: const EdgeInsets.symmetric(
                 vertical: 0.0,
                 horizontal: 20.0,
               ),
-              child: Text(category.description,
-                  style: kBodyTextStyle, textAlign: TextAlign.center),
+              child: Text(category.description, style: kBodyTextStyle, textAlign: TextAlign.center),
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5.0, 10.0),
+            child: Align(
+              alignment: Alignment.bottomRight,
+              child: Icon(
+                Icons.arrow_forward_ios_outlined,
+                color: kPrimaryColor,
+              ),
             ),
           ),
         ],
