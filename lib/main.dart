@@ -1,28 +1,26 @@
-import 'package:awal/views/category.dart';
+import 'package:awal/models/cart.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:provider/provider.dart';
 import 'views/home.dart';
 
-void main() => runApp(
-      const CupertinoApp(
-        home: Awal(),
-      ),
-    );
-
-final List<Widget> _tabs = [
-  const CategoryPage(),
-  const Placeholder(),
-  const Placeholder(),
-];
+void main() {
+  runApp(
+    const CupertinoApp(home: Awal()),
+  );
+}
 
 class Awal extends StatelessWidget {
   const Awal({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const CupertinoApp(
+    return CupertinoApp(
       debugShowCheckedModeBanner: false,
-      theme: CupertinoThemeData(brightness: Brightness.light),
-      home: HomePage(),
+      theme: const CupertinoThemeData(brightness: Brightness.light),
+      home: ChangeNotifierProvider(
+        create: (context) => Cart(),
+        child: const HomePage(),
+      ),
     );
   }
 }

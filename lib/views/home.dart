@@ -15,7 +15,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  //final int _currentIndex = 0;
+  int _currentIndex = 0;
+
+  final List<GlobalKey<NavigatorState>> tabNavKey = [
+    for (var i = 0; i < 3; i++) GlobalKey<NavigatorState>()
+  ];
 
   final List<Widget> _tabs = [
     const CategoryPage(),
@@ -31,30 +35,38 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    var cupertinoTabScaffold = CupertinoTabScaffold(
+
+    var cartState = context.watch<Cart>();
+
+    var tabBarItems = [
+      const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+      BottomNavigationBarItem(
+        icon: Badge.count(
+          count: cartState.productsCart.length,
+          child: const Icon(Icons.phone),
+        ),
+        label: 'Favorites',
+      ),
+      const BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+    ];
+
+    return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.phone),
-            label: 'Favorites',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
+        items: tabBarItems,
+        onTap: (newIndex) {
+          if (newIndex == _currentIndex) {
+            tabNavKey[newIndex].currentState?.popUntil((r) => r.isFirst);
+          } else {
+            _currentIndex = newIndex;
+          }
+        },
       ),
       tabBuilder: (context, index) {
-        return CupertinoTabView(builder: (context) => _tabs[index]);
+        return CupertinoTabView(
+          navigatorKey: tabNavKey[index],
+          builder: (context) => _tabs[index],
+        );
       },
-    );
-    return ChangeNotifierProvider(
-      create: (context) => Cart(),
-      child: cupertinoTabScaffold,
     );
   }
 }
