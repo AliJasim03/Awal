@@ -17,6 +17,12 @@ class _ProductPageState extends State<ProductPage> {
   Widget build(BuildContext context) {
     String title = widget.title;
 
+    var isScrollable = widget.productList.length < 3
+        ? const NeverScrollableScrollPhysics()
+        : const AlwaysScrollableScrollPhysics();
+
+    var isBigCard = widget.productList.length < 3 ? true : false;
+
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         middle: Text(title),
@@ -25,14 +31,15 @@ class _ProductPageState extends State<ProductPage> {
         child: Padding(
           padding: const EdgeInsets.all(10),
           child: GridView(
-            physics: const NeverScrollableScrollPhysics(), // Disable scrolling
+            physics: isScrollable, // Disable scrolling
             shrinkWrap: true,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 1, // Number of columns
-              childAspectRatio: 1.3,
+              childAspectRatio: isBigCard ? 1.3 : 5,
             ),
             children: [
-              for (var product in widget.productList) ProductCard(product: product),
+              for (var product in widget.productList)
+                ProductCard(product: product, isBigCard: isBigCard),
             ],
           ),
         ),
