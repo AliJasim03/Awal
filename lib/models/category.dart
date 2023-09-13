@@ -16,7 +16,7 @@ List<Category> categories = [
     Image.asset('images/residential-1.png'),
     'Residential System',
     'Providing sustainable cooling to millions of people at home',
-    specialProduct,
+    residentialProduct,
   ),
   Category(
     Image.asset('images/commercial.png'),

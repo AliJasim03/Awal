@@ -291,3 +291,229 @@ List<Product> commercialProduct = [
 ''',
   ),
 ];
+
+List<Product> residentialProduct = [
+  Product(
+    image: Image.asset('images/AGM/residential_system/Window.jpg'),
+    title: 'Window',
+    description: '''
+• High Efficiency Compressor (Rotary/Reciprocating types)
+• Available in Cool, Heat Pump and Electric Heater Models
+• Manual Control (wireless control with Remote control optional on Melody and Emperor series)
+• Guaranteed operation up to 52°c
+• Hydrophilic fins for Evap.
+• Whisper Quiet Operation
+• Special Hi-Tech Acoustic Insulation
+• 3–Speed Fan Control
+• Anti-Bacterial filter (Electro Static and Charcoal filters optional)
+• Auto Air Sweep
+• Available in 50 Hz and 60 Hz
+• Refrigerant (R410A/R407C)
+''',
+  ),
+  Product(
+    image: Image.asset('images/AGM/residential_system/Wall Mounted.jpg'),
+    title: 'Wall Mounted',
+    description: '''
+• Available in Cool and Heat Pump Models
+• wireless control with Remote control
+• Guaranteed operation up to 52°c
+• Hydrophilic fins for Evap.
+• Whisper Quiet Operation
+• Special Hi-Tech Acoustic Insulation
+• 3–Speed Fan Control
+• Anti-Bacterial filter (Charcoal filters optional)
+• Auto Air Sweep
+• Auto swing
+• Reverse cycle heat pumps
+• Available in 50 Hz and 60 Hz
+• Refrigerant (R410A/R407c)
+''',
+  ),
+  Product(
+    image: Image.asset('images/AGM/residential_system/Inverter Wall Mounted.jpg'),
+    title: 'Inverter Wall Mounted',
+    description: '''
+• Available in Side discharge
+• Tropical inverter compressor
+• High efficiency DC motors
+• Auto Restart Function
+• ON/OFF Timer
+• Auto-cooling system
+• Slim and Hi Tech wireless remote control
+• Turbo mode
+• Energy saving
+• Consistent high performance
+• Smart control by smartphone /tab through wireless router
+• Golden fin
+• Long life span
+• Rapid cooling & heating
+• Available in 60 Hz and 50 Hz
+• Refrigerant (R410A)
+''',
+  ),
+  Product(
+    image: Image.asset('images/AGM/residential_system/Cassette.jpg'),
+    title: 'Cassette',
+    description: '''
+• Available in Cool and Heat Pump models
+• Elegant and stylish Design to match any interior décor
+• Slim and Hi Tech wireless remote control
+• Digital Temperature settings
+• Auto Restart Function
+• ON/OFF Timer Settings
+• Whisper Quiet Operation
+• 3- Speed Fan Control
+• One touch Air-Filter removal
+• Hydrophilic Fins
+• Available in 60 Hz
+• Refrigerant (R410A)
+''',
+  ),
+  Product(
+    image: Image.asset('images/AGM/residential_system/Inverter Cassette.jpg'),
+    title: 'Inverter Cassette',
+    description: '''
+• Available in Side discharge
+• Tropical inverter compressor
+• Auto-cooling system
+• High efficiency DC motors
+• Auto Restart Function
+• ON/OFF Timer
+• Slim and Hi Tech wireless remote control
+• Energy saving
+• Consistent high performance
+• Smart control by smartphone/tab through wireless router (optional)
+• Rapid cooling & heating
+• Hydrophilic fins
+• Available in 60 Hz and 50 Hz
+• Refrigerant (R410A)
+''',
+  ),
+  Product(
+    image: Image.asset('images/AGM/residential_system/Free Standing.jpg'),
+    title: 'Free Standing',
+    description: '''
+• Available in Cool and Heat Pump models
+• Elegant and stylish Design to match any interior décor
+• Slim and Hi Tech wireless remote control
+• Digital Temperature settings
+• Auto Restart Function
+• ON/OFF Timer Settings
+• Whisper Quiet Operation
+• 3- Speed Fan Control
+• Hydrophilic Fins
+• Available in 60 Hz and 50 Hz
+• Refrigerant (R410A/R407C)
+''',
+  ),
+  Product(
+    image: Image.asset('images/AGM/residential_system/Flexi Line.jpg'),
+    title: 'Flexi Line',
+    description: '''
+• Available in Cool and Heat Pump models
+• Elegant and stylish Design to match any interior décor
+• Slim and Hi Tech wireless remote control
+• Digital Temperature settings
+• Auto Restart Function
+• ON/OFF Timer Settings
+• Whisper Quiet Operation
+• 3- Speed Fan Control
+• Reverse cycle heat pumps.
+• Auto swing
+• easy Air-Filter removal
+• Hydrophilic Fins for evaporator coil
+• Available in 60 Hz and 50 Hz
+• Refrigerant (R410A/R410C)
+''',
+  ),
+  Product(
+    image: Image.asset('images/AGM/residential_system/Ducted Split.jpg'),
+    title: 'Ducted Split',
+    description: '''
+• Available in Cool and Heat Pump model
+• Modern and compact design
+• Low height design suitable for horizontal installation in most standard drop ceiling application
+• Factory assembled controls with 220V wired remote controller as standard. (24V controller is optional)
+• High Efficiency Heat Exchanger
+• Sleep mode and ON/OFF timers
+• Low noise operation
+• Auto restart and memory function
+• Low power consumption
+• High Performance Fan
+• 3- Speed Fan Control
+• 3-minute compressor delay protection
+• Available in 50Hz and 60Hz
+• Refrigerant (R410A/R407C)
+• 19mm Aluminum filter optional
+• Stainless steel drain pan optional
+• Hydrophilic fins for indoor are optional
+''',
+  ),
+  Product(
+    image: Image.asset('images/AGM/residential_system/Inverter Ducted.jpg'),
+    title: 'Inverter Ducted',
+    description: '''
+• Available in Side discharge
+• Sleep mode
+• Refrigerant leakage detect
+• Low ambient cooling
+• Adjustable static pressure switch
+• Reserved on/off port
+• Error alarm port
+• Auto restart function
+• On/off Timer
+• Wired controller
+• Hydrophilic fins
+• Smart control by smartphone/tab through wireless router
+• Available in 60 Hz and 50 Hz
+• Refrigerant (R410A)
+''',
+  ),
+  Product(
+    image: Image.asset('images/AGM/residential_system/Condensing Units.jpg'),
+    title: 'Condensing Units',
+    description: '''
+• Available in Side and top discharge
+• Available in Cool and Heat Pump model
+• High efficiency compressors (Rotary, Reciprocating and Scroll Types)
+• Standard models are side discharge (Top Discharge Type are optional)
+• Auto-Restart function
+• Refrigerant (R410A/R407C) , Working up to 52°C
+• Condensing unit casings are made of heavy gauge powder coated galvanized steel suitable for outdoor installation
+• Condenser fan motors are inherently protected and permanently lubricated type
+• Units are completely factory wired with single point power input
+• Available in 60 Hz and 50 Hz
+''',
+  ),
+  Product(
+    image: Image.asset('images/AGM/residential_system/Inverter Condensing Units.jpg'),
+    title: 'Inverter Condensing Units',
+    description: '''
+• Available in Side discharge
+• Available in 60 Hz and 50 Hz
+• Hydrophilic fin
+• Tropical inverter compressor
+• Guaranteed operation up to 52°c
+• High efficiency DC motors
+• Refrigerant (R410A)
+''',
+  ),
+  Product(
+    image: Image.asset('images/AGM/residential_system/Inverter Solar.jpg'),
+    title: 'Inverter Solar',
+    description: '''
+• DC motor in Indoor.
+• DC motor in outdoor.
+• DC rotary inverter compressor.
+• Gold fin evaporator / condenser.
+• R410A refrigerant.
+• Reverse cycle heat pump.
+• Turbo mode.
+• 4 way air swing.
+• On/Off timer.
+• In built solar converter
+• Wifi control.
+''',
+  ),
+];
