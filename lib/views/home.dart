@@ -50,23 +50,28 @@ class _HomePageState extends State<HomePage> {
       const BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
     ];
 
-    return CupertinoTabScaffold(
-      tabBar: CupertinoTabBar(
-        items: tabBarItems,
-        onTap: (newIndex) {
-          if (newIndex == _currentIndex) {
-            tabNavKey[newIndex].currentState?.popUntil((r) => r.isFirst);
-          } else {
-            _currentIndex = newIndex;
-          }
+    return WillPopScope(
+      onWillPop: () async {
+        return !await tabNavKey[_currentIndex].currentState!.maybePop();
+      },
+      child: CupertinoTabScaffold(
+        tabBar: CupertinoTabBar(
+          items: tabBarItems,
+          onTap: (newIndex) {
+            if (newIndex == _currentIndex) {
+              tabNavKey[newIndex].currentState?.popUntil((r) => r.isFirst);
+            } else {
+              _currentIndex = newIndex;
+            }
+          },
+        ),
+        tabBuilder: (context, index) {
+          return CupertinoTabView(
+            navigatorKey: tabNavKey[index],
+            builder: (context) => _tabs[index],
+          );
         },
       ),
-      tabBuilder: (context, index) {
-        return CupertinoTabView(
-          navigatorKey: tabNavKey[index],
-          builder: (context) => _tabs[index],
-        );
-      },
     );
   }
 }
