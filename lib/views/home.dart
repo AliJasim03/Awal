@@ -41,10 +41,12 @@ class _HomePageState extends State<HomePage> {
     var tabBarItems = [
       const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
       BottomNavigationBarItem(
-        icon: Badge.count(
-          count: cartState.productsCart.length,
-          child: const Icon(Icons.phone),
-        ),
+        icon: cartState.productsCart.isNotEmpty
+            ? Badge.count(
+                count: cartState.productsCart.length,
+                child: const Icon(Icons.phone),
+              )
+            : const Icon(Icons.phone),
         label: 'Favorites',
       ),
       const BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),

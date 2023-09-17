@@ -2,7 +2,9 @@ import 'package:awal/models/product.dart';
 import 'package:flutter/cupertino.dart';
 
 class Cart extends ChangeNotifier {
-  List<Product> productsCart = [refrigerationProduct[0]];
+  List<Product> productsCart = [];
+  var requestNum = 0;
+
   List getPorductList() {
     return productsCart;
   }
@@ -20,6 +22,10 @@ class Cart extends ChangeNotifier {
   void removeALl() {
     productsCart = [];
     notifyListeners();
+  }
+
+  void incrementRequest() {
+    requestNum++;
   }
 
   bool checkProduct(Product product) {

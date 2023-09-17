@@ -10,7 +10,6 @@ class CheckoutCard extends StatelessWidget {
   const CheckoutCard({
     Key? key,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     var appState = context.watch<Cart>();
@@ -61,7 +60,10 @@ class CheckoutCard extends StatelessWidget {
                   width: getProportionateScreenWidth(250),
                   child: DefaultButton(
                     text: "Inquire Now",
-                    press: () {},
+                    press: () {
+                      appState.removeALl();
+                      appState.incrementRequest();
+                    },
                   ),
                 ),
               ],
