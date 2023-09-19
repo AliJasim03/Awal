@@ -3,7 +3,8 @@ import 'package:awal/models/product.dart';
 import 'package:flutter/cupertino.dart';
 
 class ProductPage extends StatefulWidget {
-  const ProductPage({super.key, required this.title, required this.productList});
+  const ProductPage(
+      {super.key, required this.title, required this.productList});
 
   final String title;
   final List<Product> productList;
@@ -17,7 +18,7 @@ class _ProductPageState extends State<ProductPage> {
   Widget build(BuildContext context) {
     String title = widget.title;
 
-    var isScrollable = widget.productList.length < 3
+    var isScrollable = widget.productList.length < 5
         ? const NeverScrollableScrollPhysics()
         : const AlwaysScrollableScrollPhysics();
 
@@ -32,7 +33,7 @@ class _ProductPageState extends State<ProductPage> {
           padding: const EdgeInsets.all(10),
           child: GridView(
             physics: isScrollable, // Disable scrolling
-            shrinkWrap: true,
+            shrinkWrap: false,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 1, // Number of columns
               childAspectRatio: isBigCard ? 1.3 : 5,
