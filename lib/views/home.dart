@@ -38,16 +38,19 @@ class _HomePageState extends State<HomePage> {
 
     var cartState = context.watch<Cart>();
 
+    const cartIcon = Icon(Icons.mail);
+
     var tabBarItems = [
       const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
       BottomNavigationBarItem(
         icon: cartState.productsCart.isNotEmpty
             ? Badge.count(
                 count: cartState.productsCart.length,
-                child: const Icon(Icons.phone),
+                offset: const Offset(7.0, 1.0),
+                child: cartIcon,
               )
-            : const Icon(Icons.phone),
-        label: 'Favorites',
+            : cartIcon,
+        label: 'Inquiry',
       ),
       const BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
     ];
