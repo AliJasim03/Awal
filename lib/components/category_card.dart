@@ -38,7 +38,7 @@ class CategoryCard extends StatelessWidget {
               alignment: Alignment.bottomRight,
               child: Icon(
                 Icons.arrow_forward_ios_outlined,
-                color: kPrimaryColor,
+                color: kPrimaryColorDark,
               ),
             ),
           ),

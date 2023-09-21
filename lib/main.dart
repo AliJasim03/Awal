@@ -1,3 +1,4 @@
+import 'package:awal/constants.dart';
 import 'package:awal/models/cart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
@@ -16,7 +17,8 @@ class Awal extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoApp(
       debugShowCheckedModeBanner: false,
-      theme: const CupertinoThemeData(brightness: Brightness.light),
+      theme:
+          const CupertinoThemeData(brightness: Brightness.light, primaryColor: kPrimaryColorDark),
       home: ChangeNotifierProvider(
         create: (context) => Cart(),
         child: const Navigation(),
