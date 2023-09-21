@@ -1,11 +1,9 @@
-import 'package:awal/models/cart.dart';
-import 'package:awal/views/cart_page.dart';
-import 'package:awal/views/category.dart';
-import 'package:awal/views/profile/profile_screen.dart';
+import 'package:awal/components/action_sheet.dart';
+import 'package:awal/components/category_card.dart';
+import 'package:awal/constants.dart';
+import 'package:awal/models/category.dart';
+import 'package:awal/models/product.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:awal/components/size_config.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,105 +13,106 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _currentIndex = 0;
-
-  final List<GlobalKey<NavigatorState>> tabNavKey = [
-    for (var i = 0; i < 3; i++) GlobalKey<NavigatorState>()
-  ];
-
-  final List<Widget> _tabs = [
-    const CategoryPage(),
-
-    const CartPage(),
-
-    ProfileScreen(),
-    // HomeScreen(),
-    // FavoritesScreen(),
-    // ProfileScreen(),
-  ];
-
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
+    const homeProductCardSize = 200.0;
 
-    var cartState = context.watch<Cart>();
-
-    const cartIcon = Icon(Icons.mail);
-
-    var tabBarItems = [
-      const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-      BottomNavigationBarItem(
-        icon: cartState.productsCart.isNotEmpty
-            ? Badge.count(
-                count: cartState.productsCart.length,
-                offset: const Offset(7.0, 1.0),
-                child: cartIcon,
-              )
-            : cartIcon,
-        label: 'Inquiry',
-      ),
-      const BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-    ];
-
-    return WillPopScope(
-      onWillPop: () async {
-        return !await tabNavKey[_currentIndex].currentState!.maybePop();
-      },
-      child: CupertinoTabScaffold(
-        tabBar: CupertinoTabBar(
-          items: tabBarItems,
-          onTap: (newIndex) {
-            if (newIndex == _currentIndex) {
-              tabNavKey[newIndex].currentState?.popUntil((r) => r.isFirst);
-            } else {
-              _currentIndex = newIndex;
-            }
-          },
+    var homeProductsListView = SizedBox(
+      width: double.infinity,
+      height: homeProductCardSize + 10,
+      child: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+            colors: [
+              kSecondryColor,
+              Color.fromRGBO(234, 236, 235, 0.612),
+            ],
+          ),
         ),
-        tabBuilder: (context, index) {
-          return CupertinoTabView(
-            navigatorKey: tabNavKey[index],
-            builder: (context) => _tabs[index],
-          );
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: residentialProduct.length,
+          itemBuilder: (BuildContext context, int index) => HomeProductCard(
+            product: residentialProduct[index],
+            cardSize: homeProductCardSize,
+          ),
+        ),
+      ),
+    );
+
+    return CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(
+        middle: Text('Home'),
+      ),
+      child: ListView.builder(
+        itemCount: categories.length + 1,
+        itemBuilder: (BuildContext context, index) {
+          switch (index) {
+            case 0:
+              return homeProductsListView;
+
+            case 1:
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "Categories",
+                  style: kTitleTextStyle.copyWith(fontSize: 35.0),
+                ),
+              );
+
+            default:
+              return CategoryCard(
+                category: categories[index - 2],
+              );
+          }
         },
       ),
     );
   }
 }
 
+class HomeProductCard extends StatelessWidget {
+  const HomeProductCard({super.key, required this.product, required this.cardSize});
 
-// Scaffold(
-//       appBar: AppBar(
-//         title: Text(
-//           'Home Page',
-//           style: kAppBarTextStyle,
-//         ),
-//         backgroundColor: kPrimaryColor,
-//       ),
-//       body: _tabs.elementAt(_currentIndex),
-//       bottomNavigationBar: BottomNavigationBar(
-//         type: BottomNavigationBarType.fixed,
-//         showSelectedLabels: true,
-//         showUnselectedLabels: false,
-//         currentIndex: _currentIndex,
-//         onTap: (int index) {
-//           setState(() {
-//             _currentIndex = index;
-//           });
-//         },
-//         items: [
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.home),
-//             label: 'Home',
-//           ),
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.phone),
-//             label: 'Favorites',
-//           ),
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.person),
-//             label: 'Profile',
-//           ),
-//         ],
-//       ),
-//     );
+  final Product product;
+  final double cardSize;
+
+  @override
+  Widget build(BuildContext context) {
+    var image = ClipRRect(
+      borderRadius: const BorderRadius.only(
+        topLeft: Radius.circular(10.0),
+        topRight: Radius.circular(40.0),
+        bottomRight: Radius.circular(40.0),
+        bottomLeft: Radius.circular(40.0),
+      ), // Image border
+      child: GestureDetector(
+        onTap: () => showActionSheet(context, product),
+        child: Stack(
+          fit: StackFit.passthrough,
+          children: [
+            product.image,
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 18.0),
+              alignment: Alignment.bottomCenter,
+              child: Text(
+                product.title,
+                style: kTitleTextStyle.copyWith(fontSize: 14),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+
+    return SizedBox(
+        width: cardSize,
+        height: cardSize,
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: image,
+        ));
+  }
+}

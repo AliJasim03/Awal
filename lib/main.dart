@@ -1,7 +1,7 @@
 import 'package:awal/models/cart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
-import 'views/home.dart';
+import 'views/navigation.dart';
 
 void main() {
   runApp(
@@ -19,7 +19,7 @@ class Awal extends StatelessWidget {
       theme: const CupertinoThemeData(brightness: Brightness.light),
       home: ChangeNotifierProvider(
         create: (context) => Cart(),
-        child: const HomePage(),
+        child: const Navigation(),
       ),
     );
   }
