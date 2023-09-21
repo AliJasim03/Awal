@@ -64,9 +64,7 @@ class _HomePageState extends State<HomePage> {
               );
 
             default:
-              return CategoryCard(
-                category: categories[index - 2],
-              );
+              return CategoryCard(category: categories[index - 2]);
           }
         },
       ),
