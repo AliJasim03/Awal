@@ -3,8 +3,7 @@ import 'package:awal/models/product.dart';
 import 'package:flutter/cupertino.dart';
 
 class ProductPage extends StatefulWidget {
-  const ProductPage(
-      {super.key, required this.title, required this.productList});
+  const ProductPage({super.key, required this.title, required this.productList});
 
   final String title;
   final List<Product> productList;
@@ -31,17 +30,16 @@ class _ProductPageState extends State<ProductPage> {
       child: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(10),
-          child: GridView(
+          child: GridView.builder(
             physics: isScrollable, // Disable scrolling
             shrinkWrap: false,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 1, // Number of columns
               childAspectRatio: isBigCard ? 1.3 : 5,
             ),
-            children: [
-              for (var product in widget.productList)
-                ProductCard(product: product, isBigCard: isBigCard),
-            ],
+            itemCount: widget.productList.length,
+            itemBuilder: (context, index) =>
+                ProductCard(product: widget.productList[index], isBigCard: isBigCard),
           ),
         ),
       ),
