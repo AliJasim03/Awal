@@ -2,17 +2,17 @@ import 'package:awal/components/product_card.dart';
 import 'package:awal/models/product.dart';
 import 'package:flutter/cupertino.dart';
 
-class ProductPage extends StatefulWidget {
-  const ProductPage({super.key, required this.title, required this.productList});
+class ProductView extends StatefulWidget {
+  const ProductView({super.key, required this.title, required this.productList});
 
   final String title;
   final List<Product> productList;
 
   @override
-  State<ProductPage> createState() => _ProductPageState();
+  State<ProductView> createState() => _ProductViewState();
 }
 
-class _ProductPageState extends State<ProductPage> {
+class _ProductViewState extends State<ProductView> {
   @override
   Widget build(BuildContext context) {
     String title = widget.title;

@@ -1,9 +1,11 @@
-import 'package:awal/constants.dart';
-import 'package:awal/models/product.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:awal/models/cart.dart';
+
 import 'package:provider/provider.dart';
+
+import 'package:awal/constants.dart';
+import 'package:awal/models/product.dart';
+import 'package:awal/models/cart.dart';
 
 void showActionSheet(BuildContext context, Product product) {
   var appState = Provider.of<Cart>(context, listen: false);

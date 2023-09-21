@@ -21,25 +21,8 @@ class Awal extends StatelessWidget {
           const CupertinoThemeData(brightness: Brightness.light, primaryColor: kPrimaryColorDark),
       home: ChangeNotifierProvider(
         create: (context) => Cart(),
-        child: const Navigation(),
+        child: const NavigationView(),
       ),
     );
   }
 }
-
-
-
-// MaterialApp(
-//       title: 'Awal',
-//       theme: ThemeData(
-//         primaryColor: kPrimaryColor,
-//         secondaryHeaderColor: kSecondryColor,
-//         fontFamily: 'Futura',
-//       ),
-//       home: const HomePage(),
-//       debugShowCheckedModeBanner: false,
-//       // routes: {
-//       //   '/category': (context) => CategoryPage(),
-//       //   // ... other named routes
-//       // },
-//     );

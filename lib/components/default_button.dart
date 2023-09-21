@@ -1,7 +1,7 @@
-import 'package:awal/components/size_config.dart';
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import 'package:awal/components/size_config.dart';
+import 'package:awal/constants.dart';
 
 class DefaultButton extends StatelessWidget {
   const DefaultButton({
@@ -19,8 +19,9 @@ class DefaultButton extends StatelessWidget {
       height: getProportionateScreenHeight(56),
       child: TextButton(
         style: TextButton.styleFrom(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
           backgroundColor: kPrimaryColorDark,
         ),
         onPressed: press as void Function()?,

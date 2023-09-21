@@ -1,35 +1,30 @@
 import 'package:awal/models/cart.dart';
-import 'package:awal/views/cart_page.dart';
+import 'package:awal/views/cart.dart';
 import 'package:awal/views/home.dart';
-import 'package:awal/views/profile/profile_screen.dart';
+import 'package:awal/views/profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:awal/components/size_config.dart';
 
-class Navigation extends StatefulWidget {
-  const Navigation({super.key});
+class NavigationView extends StatefulWidget {
+  const NavigationView({super.key});
 
   @override
-  State<Navigation> createState() => _NavigationState();
+  State<NavigationView> createState() => _NavigationViewState();
 }
 
-class _NavigationState extends State<Navigation> {
+class _NavigationViewState extends State<NavigationView> {
   int _currentIndex = 0;
 
   final List<GlobalKey<NavigatorState>> tabNavKey = [
     for (var i = 0; i < 3; i++) GlobalKey<NavigatorState>()
   ];
 
-  final List<Widget> _tabs = [
-    const HomePage(),
-
-    const CartPage(),
-
-    ProfileScreen(),
-    // HomeScreen(),
-    // FavoritesScreen(),
-    // ProfileScreen(),
+  final List<Widget> _tabs = const [
+    HomeView(),
+    CartView(),
+    ProfileView(),
   ];
 
   @override
@@ -37,7 +32,6 @@ class _NavigationState extends State<Navigation> {
     SizeConfig().init(context);
 
     var cartState = context.watch<Cart>();
-
     const cartIcon = Icon(Icons.mail);
 
     var tabBarItems = [
@@ -80,40 +74,3 @@ class _NavigationState extends State<Navigation> {
     );
   }
 }
-
-
-// Scaffold(
-//       appBar: AppBar(
-//         title: Text(
-//           'Home Page',
-//           style: kAppBarTextStyle,
-//         ),
-//         backgroundColor: kPrimaryColor,
-//       ),
-//       body: _tabs.elementAt(_currentIndex),
-//       bottomNavigationBar: BottomNavigationBar(
-//         type: BottomNavigationBarType.fixed,
-//         showSelectedLabels: true,
-//         showUnselectedLabels: false,
-//         currentIndex: _currentIndex,
-//         onTap: (int index) {
-//           setState(() {
-//             _currentIndex = index;
-//           });
-//         },
-//         items: [
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.home),
-//             label: 'Home',
-//           ),
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.phone),
-//             label: 'Favorites',
-//           ),
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.person),
-//             label: 'Profile',
-//           ),
-//         ],
-//       ),
-//     );
