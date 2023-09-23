@@ -35,7 +35,7 @@ class _HomeViewState extends State<HomeView> {
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: residentialProduct.length,
-          itemBuilder: (BuildContext context, int index) => HomeProductCard(
+          itemBuilder: (BuildContext context, int index) => HomeProductButton(
             product: residentialProduct[index],
             cardSize: homeProductCardSize,
           ),
@@ -72,8 +72,8 @@ class _HomeViewState extends State<HomeView> {
   }
 }
 
-class HomeProductCard extends StatelessWidget {
-  const HomeProductCard({super.key, required this.product, required this.cardSize});
+class HomeProductButton extends StatelessWidget {
+  const HomeProductButton({super.key, required this.product, required this.cardSize});
 
   final Product product;
   final double cardSize;
@@ -92,33 +92,30 @@ class HomeProductCard extends StatelessWidget {
 
     var prdocutCard = ClipRRect(
       borderRadius: cardShape, // Image border
-      child: GestureDetector(
-        onTap: () => showActionSheet(context, product),
-        child: Stack(
-          children: [
-            ShaderMask(
-              shaderCallback: (rect) {
-                return const LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [gradientStart, gradientEnd],
-                ).createShader(Rect.fromLTRB(0, 0, rect.width, rect.height));
-              },
-              blendMode: BlendMode.lighten,
-              child: Container(
-                alignment: Alignment.bottomCenter,
-                decoration: BoxDecoration(
-                  image: DecorationImage(image: product.image.image, fit: BoxFit.fill),
-                ),
+      child: Stack(
+        children: [
+          ShaderMask(
+            shaderCallback: (rect) {
+              return const LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [gradientStart, gradientEnd],
+              ).createShader(Rect.fromLTRB(0, 0, rect.width, rect.height));
+            },
+            blendMode: BlendMode.lighten,
+            child: Container(
+              alignment: Alignment.bottomCenter,
+              decoration: BoxDecoration(
+                image: DecorationImage(image: product.image.image, fit: BoxFit.fill),
               ),
             ),
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 10.0),
-              alignment: Alignment.bottomCenter,
-              child: Text(product.title, style: kTitleTextStyle.copyWith(fontSize: 14)),
-            ),
-          ],
-        ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 10.0),
+            alignment: Alignment.bottomCenter,
+            child: Text(product.title, style: kTitleTextStyle.copyWith(fontSize: 14)),
+          ),
+        ],
       ),
     );
 
@@ -127,7 +124,10 @@ class HomeProductCard extends StatelessWidget {
       height: cardSize,
       child: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: prdocutCard,
+        child: TextButton(
+          onPressed: () => showActionSheet(context, product),
+          child: prdocutCard,
+        ),
       ),
     );
   }
